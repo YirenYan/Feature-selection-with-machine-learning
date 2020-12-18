@@ -6,9 +6,13 @@
 # The ML algorithms implementation is based on caret packages, so you can change whatever ML algorithm based on research goal
 # This code has been used in the author's proceding papaers.
 
-
 library(CombMSC)
 library(caret)
+
+train.control1 <- trainControl(method = "repeatedcv",
+                              number = 5,
+                              repeats = 1,
+                              search = "grid")
 comb <- c()
 result.train1 <- result
 avg_bar <- 0
